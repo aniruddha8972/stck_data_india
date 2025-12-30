@@ -1,0 +1,22 @@
+# The main pipeline for ml_stock_analysis
+
+resources:
+  pipelines:
+    ml_stock_analysis_etl:
+      name: ml_stock_analysis_etl
+      catalog: ${var.catalog}
+      schema: ${var.schema}
+      serverless: true
+      root_path: "../src/ml_stock_analysis_etl"
+
+      libraries:
+        - glob:
+            include: ../src/ml_stock_analysis_etl/transformations/**
+        - glob:
+            include: ../src/ml_stock_analysis_etl/explorations/**
+
+      environment:
+        dependencies:
+          # We include every dependency defined by pyproject.toml by defining an editable environment
+          # that points to the folder where pyproject.toml is deployed.
+          - --editable ${workspace.file_path}
