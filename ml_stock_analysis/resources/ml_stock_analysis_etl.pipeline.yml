@@ -13,7 +13,7 @@ resources:
         - glob:
             include: ../src/ml_stock_analysis_etl/transformations/**
         - glob:
-            include: ../src/ml_stock_analysis_etl/transformations/**
+            include: ../src/ml_stock_analysis_etl/explorations/**
 
       environment:
         dependencies:
