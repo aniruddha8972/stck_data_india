@@ -12,6 +12,8 @@ resources:
       libraries:
         - glob:
             include: ../src/ml_stock_analysis_etl/transformations/**
+        - glob:
+            include: ../src/ml_stock_analysis_etl/transformations/**
 
       environment:
         dependencies:
