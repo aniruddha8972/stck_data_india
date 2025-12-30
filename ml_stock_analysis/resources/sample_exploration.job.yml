@@ -1,0 +1,20 @@
+resources:
+  jobs:
+    sample_exploration:
+      name: sample_exploration
+      trigger:
+        periodic:
+          interval: 1
+          unit: DAYS
+      tasks:
+        - task_key: sample_exploration
+          notebook_task:
+            notebook_path: ../src/ml_stock_analysis_etl/explorations/sample_exploration.ipynb
+      notification_settings:
+        no_alert_for_skipped_runs: true
+      email_notifications:
+        no_alert_for_skipped_runs: true
+        on_failure:
+          - girianiruddha4@gmail.com
+      queue:
+        enabled: true
