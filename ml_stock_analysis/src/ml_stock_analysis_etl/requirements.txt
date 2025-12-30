@@ -1,0 +1,6 @@
+pandas==2.2.2
+numpy==1.26.4
+yfinance==0.2.36
+requests==2.32.3
+flask==3.0.3
+scikit-learn==1.5.1
